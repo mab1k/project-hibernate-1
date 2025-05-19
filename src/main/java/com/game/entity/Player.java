@@ -6,8 +6,10 @@ import java.util.Date;
 
 @Table(name = "player", schema = "rpg")
 @Entity
+@NamedQuery(name = "player_getAllCount", query = "SELECT COUNT(p) FROM Player p")
 public class Player {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private Long id;
 
